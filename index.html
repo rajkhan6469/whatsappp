@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://web.whatsapp.com/favicon-64x64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://web.whatsapp.com/favicon-64x64.ico" type="image/x-icon">
+    <title>WhatsApp Style Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #25d366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .features {
+            padding: 40px 0;
+        }
+        .feature {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .cta {
+            background-color: #075e54;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #25d366;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #128c7e;
+        }
+        .profile-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #25d366;
+        }
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            .features .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Connect with WhatsApp</h1>
+        <p>Simple. Secure. Reliable messaging.</p>
+    </div>
+
+    <div class="profile-section">
+        <img id="profileImage" src="" alt="Profile" class="profile-image">
+        <h2>Anita Akter</h2>
+        <button class="btn btn-primary" onclick="window.location.href='https://italianbeepimpediment.com/xk7a66w1f?key=a37b9ac4e38f79ba44a4d70770b516fe'">Send Message</button>
+    </div>
+
+    <div class="container features">
+        <div class="row">
+            <div class="col-md-4 feature">
+                <h3>Fast Messaging</h3>
+                <p>Send and receive messages quickly and easily.</p>
+            </div>
+            <div class="col-md-4 feature">
+                <h3>Secure Conversations</h3>
+                <p>End-to-end encryption for all your chats.</p>
+            </div>
+            <div class="col-md-4 feature">
+                <h3>Group Chats</h3>
+                <p>Connect with multiple people in one place.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Get Started with WhatsApp Today!</h2>
+        <p>Download now and enjoy seamless communication.</p>
+        <a href="#" class="btn btn-primary btn-lg">Download Now</a>
+    </div>
+
+    <script>
+        // List of profile images available
+        const images = [
+            'https://easilypay.co.uk/im/429484573_408838124967484_2756748983545089162_n.webp',
+            'http://easilypay.co.uk//im/429692851_1579314322814235_2634693010987392371_n.webp',
+            'http://easilypay.co.uk//im/429897202_310000791716925_4289761925644915718_n.webp',
+            'http://easilypay.co.uk//im/430118276_1607031256715615_6562532347216557557_n.webp',
+            'http://easilypay.co.uk//im/430453742_289703923933527_7588147105794552599_n.webp',
+            'http://easilypay.co.uk//im/430760162_1206634527389013_9198782841766924094_n.webp',
+            'https://easilypay.co.uk/im/433243519_403140105796889_7789691336189024558_n.webp',
+            'http://easilypay.co.uk//im/431244492_901477605046536_1300349049880619265_n.webp',
+            'http://easilypay.co.uk//im/431793461_1532756673966722_2723764098714398937_n.webp',
+            'https://easilypay.co.uk/im/432343343_939265964219789_6878883270030571503_n.webp',
+            'https://easilypay.co.uk/im/434442514_3707380706206228_5577847493712854166_n.webp',
+            'https://easilypay.co.uk/im/433964931_1093410915346314_111431073084479096_n.webp',
+            'http://easilypay.co.uk//im/431844995_429613499414574_7037602635400450523_n.webp',
+            'http://easilypay.co.uk//im/432354343_939265964264179_6867888237300571503_n.webp',
+            'http://easilypay.co.uk//im/432493381_1064011534895717_8662926658401350789_n.webp',
+            'http://easilypay.co.uk//im/433243519_403140105796889_7789691336189024558_n.webp'
+        ];
+        
+        // Select a random image for each visitor
+        document.getElementById("profileImage").src = images[Math.floor(Math.random() * images.length)];
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
