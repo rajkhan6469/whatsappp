@@ -1,0 +1,32 @@
+System Requirements:
+1. Apache 2.2+ / LiteSpeed 1.5+ / Nginx 1.2+
+2. PHP 7.4.15+
+3. MySQL 5.7+ / MariaDB 10+
+4. Redis 7.0+
+
+PHP Extensions:
+1. ionCube Loader
+2. curl
+3. fileinfo
+4. redis
+5. opcache
+6. apcu
+7. gd
+8. iconv
+9. mbstring
+10. sockets
+11. zip
+
+PHP Functions:
+1. shell_exec
+2. proc_open
+3. proc_close
+4. proc_get_status
+5. popen
+6. putenv
+7. bz2
+
+Fix Google Chrome Crashpad Error. Run this commands via ssh terminal:
+sudo mkdir -p /home/www/.config/google-chrome/Crashpad && sudo chown -R www:www /home/www/.config
+OR
+sudo mkdir -p /home/www/.config/google-chrome/Crashpad && sudo chown -R www-data:www-data /home/www/.config

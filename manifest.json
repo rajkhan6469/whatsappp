@@ -1,0 +1,48 @@
+{
+    "name": "GDPlayer",
+    "id": "localhost",
+    "description": "Google Drive Video Player",
+    "icons": [
+        {
+            "src": "http://localhost/gdplayer/assets/img/logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        }
+    ],
+    "short_name": "GDPlayer",
+    "start_url": "http://localhost/gdplayer/?source=pwa",
+    "scope": "http://localhost/gdplayer/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3f51b5",
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "shortcuts": [
+        {
+            "name": "Open Google Drive Bypass Limit",
+            "short_name": "Google Drive Bypass Limit",
+            "description": "View Google Drive direct link generator and downloader",
+            "url": "http://localhost/gdplayer/sharer/?utm_source=homescreen",
+            "icons": [
+                {
+                    "src": "http://localhost/gdplayer/assets/img/google-drive.png",
+                    "sizes": "512x512"
+                }
+            ]
+        },
+        {
+            "name": "View Video List",
+            "short_name": "Video List",
+            "description": "Show a list of videos stored on your account.",
+            "url": "http://localhost/gdplayer/administrator/videos/list/?utm_source=homescreen",
+            "icons": [
+                {
+                    "src": "http://localhost/gdplayer/assets/img/film.png",
+                    "sizes": "512x512"
+                }
+            ]
+        }
+    ]
+}

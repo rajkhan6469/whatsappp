@@ -1,0 +1,14 @@
+user-agent: *
+disallow: /administrator
+disallow: /ajax
+disallow: /api
+disallow: /admin-api
+disallow: /dash
+disallow: /dash-parser
+disallow: /segments
+disallow: /hls
+disallow: /hls-parser
+disallow: /playlist
+disallow: /videoplayback
+disallow: /poster
+disallow: /subtitle

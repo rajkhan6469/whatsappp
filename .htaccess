@@ -1,0 +1,65 @@
+# Disable directory browsing 
+Options -Indexes
+AddDefaultCharset utf-8
+
+<FilesMatch "^(tmp|cache|includes|vendor|composer\.json|composer\.lock)$">
+    deny from all
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header unset Server
+    Header unset Host
+    Header unset P3P
+    Header unset Public-Key-Pins
+    Header unset Public-Key-Pins-Report-Only
+    Header unset X-Powered-By
+    Header unset X-Runtime
+    Header unset X-Version
+    Header unset Referrer-Policy
+    Header set Access-Control-Allow-Methods "GET, POST, HEAD, OPTIONS"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <If "%{REQUEST_URI} =~ m#^/assets/#">
+        Header set Cache-Control "public, max-age=31104000"
+    </If>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+    AddOutputFilterByType DEFLATE text/*
+    AddOutputFilterByType DEFLATE application/json application/x-mpegurl application/vnd.apple.mpegurl application/xml application/dash+xml application/javascript application/x-javascript
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4.0[678] no-gzip
+    BrowserMatch /bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/* application/javascript application/json application/xml application/dash+xml application/x-mpegurl application/vnd.apple.mpegurl font/woff font/woff2 image/svg+xml
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Litespeed X-Litespeed-Location config
+    # Replace "/<site-path>/<domain-name>/" on line 46 below according to your site's installation path. After that, delete the "#" in line 46 below
+    # RewriteRule ^cache-files/(.*)$ /<site-path>/<domain-name>/cache/files/$1 [L,E=IS_CACHE_FILE:true]
+    RewriteRule ^poster/(.*)?$ - [E=no-gzip:1]
+    RewriteRule ^seg/(.*)?$ - [E=no-gzip:1]
+    RewriteRule ^ts/(.*)?$ - [E=no-gzip:1]
+    RewriteRule ^vid/(.*)?$ - [E=no-gzip:1]
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule .* index.php [L,QSA]
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+    SetEnvIf REDIRECT_no-gzip 1 no-gzip
+</IfModule>
+
+<IfModule mod_headers.c>
+    SetEnvIf IS_CACHE_FILE true CACHE_FILE_HEADER
+    Header always set Access-Control-Allow-Credentials "false" env=CACHE_FILE_HEADER
+    Header always set Access-Control-Allow-Origin "*" env=CACHE_FILE_HEADER
+    Header always set Access-Control-Allow-Headers: "*" env=CACHE_FILE_HEADER
+    Header always set Access-Control-Expose-Headers: "*" env=CACHE_FILE_HEADER
+</IfModule>
